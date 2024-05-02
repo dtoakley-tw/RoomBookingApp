@@ -4,13 +4,13 @@ namespace RoomBookingApp.Domain.BaseModels;
 
 public abstract class RoomBookingBase: IValidatableObject
 {
-    [Required]
-    [StringLength(80)]
-    public string FullName { get; set; }
+    [Required] [StringLength(80)] public string FullName { get; set; } = string.Empty;
+
     [Required]
     [StringLength(80)]
     [EmailAddress]
-    public string Email { get; set; }
+    public string Email { get; set; } = string.Empty;
+    
     [Required]
     [DataType(DataType.Date)]
     public DateTime Date { get; set; }
